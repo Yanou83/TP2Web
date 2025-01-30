@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Landing page Moderne et Responsive en HTML & CSS</title>
     <link rel="stylesheet" href="index.css" />
-    <script src="index.js"></script>
+    <script src="index.js" defer></script>
 </head>
 
 <body>
@@ -23,20 +23,20 @@
                 <p>Présentation</p>
                 <p>Contact</p>
                 <button>Acheter</button>
-                <button onclick="window.location.href='connexion.html'">Connexion</button>
+                <button id="auth-button" onclick="handleAuthButtonClick()"></button>
             </div>
         </nav>
 
         <section class="presentation first">
             <div class="product-presentation">
-                <h1>Écouter de la musique, c'est vivre sa passion</h1>
+                <h1>Découvrir le jeu d'une autre façon</h1>
                 <p>
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum
                     odio eos beatae labore possimus. Pariatur ipsa, tempore optio
                     placeat expedita minus cupiditate nulla iure quis error. A vitae
                     quibusdam ipsum dolor sit amet consectetur adipisicing elit.
                 </p>
-                <button>Acheter maintenant</button>
+                <button>Lancer le jeu</button>
                 <div class="small-images">
                     <div class="small">
                         <img

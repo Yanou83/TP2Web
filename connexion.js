@@ -60,7 +60,11 @@ function handleLogin(event) {
 
     const userData = JSON.parse(storedUserData);
     if (userData.password === password) {
+        sessionStorage.setItem('isAuthenticated', 'true');
         showNotification("Connexion réussie !", "success");
+        setTimeout(() => {
+            window.location.href = 'index.html';
+        }, 1000);
     } else {
         showNotification("Mot de passe incorrect.", "error");
     }
