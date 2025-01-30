@@ -193,7 +193,7 @@ footer p{
 }
 
 @media (max-width: 600px) {
-    footer{
+    footer {
         display: flex;
         flex-direction: column;
     }
@@ -221,12 +221,13 @@ footer p{
         right: -100%;
         top: 0;
         height: 100%;
-        width: 200px;
+        width: 250px;
         background-color: #20212e;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        transition: right 0.3s ease-in-out;
+        align-items: flex-start;
+        padding: 60px 20px;
+        transition: right 0.4s ease-in-out;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
     }
 
     .nav-menu.open {
@@ -234,6 +235,109 @@ footer p{
     }
 
     .nav-menu p, .nav-menu button {
-        margin: 10px 0;
+        margin: 15px 0;
+        width: 100%;
+        text-align: left;
+        padding: 15px 20px;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+
+    .nav-menu p:hover, .nav-menu button:hover {
+        background-color: #33314d;
+    }
+
+    header nav .right p {
+        margin: 0;
+        padding-left: 60px;
+    }
+
+    header nav .right button {
+        margin: 0 0 15px 0;
+    }
+
+    header nav .btn-acheter-horizontal, header nav .btn-se-connecter-horizontal {
+        display: block;
+        padding: 5px 15px;
+        font-size: 16px;
+        background-color: inherit;
+        border: 1px solid var(--violet);
+        border-radius: 5px;
+        color: var(--violet);
+        cursor: pointer;
+        transition: color 0.5s, background-color 0.5s;
+    }
+
+    header nav .btn-acheter-horizontal:hover {
+        color: inherit;
+        background-color: var(--violet);
+    }
+
+    .presentation .product-presentation h1 {
+        font-size: 2em;
+    }
+
+    .presentation .image-presentation {
+        display: none;
+    }
+
+    footer {
+        justify-content: flex-start;
+    }
+
+    footer .column {
+        width: 80%;
+    }
+
+    .burger-menu {
+        display: flex;
+    }
+
+    .right {
+        position: fixed;
+        display: block;
+        right: -100%;
+        top: 0;
+        height: 100%;
+        width: 250px;
+        background: #20212e;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 60px 20px;
+        transition: right 0.4s ease-in-out;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    }
+
+    .right p, .right button {
+        margin: 15px 0;
+        width: 100%;
+        text-align: left;
+        padding: 15px 20px;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+
+    .right p:hover, .right button:hover {
+        background-color: #33314d;
+    }
+
+    .right.active {
+        right: 0;
+    }
+
+    .right.active p {
+        display: block;
+    }
+
+    .burger-menu.active span:nth-child(1) {
+        transform: rotate(-45deg) translate(-6px, 9px);
+    }
+
+    .burger-menu.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .burger-menu.active span:nth-child(3) {
+        transform: rotate(45deg) translate(-6px, -9px);
     }
 }
