@@ -48,6 +48,7 @@ header nav .right button {
 	color: var(--violet);
 	cursor: pointer;
 	transition: color 0.5s, background-color 0.5s;
+	margin-right: 5px;
 }
 header nav .right button:hover {
 	color: inherit;
