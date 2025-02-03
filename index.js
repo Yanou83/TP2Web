@@ -15,6 +15,22 @@ document.addEventListener('DOMContentLoaded', () => {
         navMenu.classList.toggle('open');
         burger.classList.toggle('cross');
     });
+
+    const smallImages = document.querySelectorAll('.small');
+
+    smallImages.forEach(div => {
+        div.addEventListener('click', () => {
+            smallImages.forEach(d => d.classList.remove('active'));
+            div.classList.add('active');
+        });
+    });
+
+    const scoresButton = document.querySelector('.scores');
+    const secondSection = document.querySelector('.presentation.second');
+
+    scoresButton.addEventListener('click', () => {
+        secondSection.scrollIntoView({ behavior: 'smooth' });
+    });
 });
 
 function handleAuthButtonClick() {

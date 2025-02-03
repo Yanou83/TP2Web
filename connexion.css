@@ -24,6 +24,10 @@ body {
     text-align: center;
 }
 
+.login-container small {
+    display: none;
+}
+
 .login-container h1 {
     margin-bottom: 20px;
     color: var(--violet);

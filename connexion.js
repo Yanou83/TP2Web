@@ -28,9 +28,22 @@ function showNotification(message, type) {
 
 function saveRegistrationData(event) {
     event.preventDefault();
+    const pseudo = document.getElementById('pseudo').value;
     const email = document.getElementById('new-email').value;
     const password = document.getElementById('new-password').value;
     const confirmPassword = document.getElementById('confirm-password').value;
+    const passwordPattern = /(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&.])[A-Za-z\d@$!%*?&.]{6,}/;
+    const small = document.querySelector('.login-container small');
+    const passwordInput = document.querySelector('#new-password');
+    const passwordInput2 = document.querySelector('#confirm-password');
+
+    if (!passwordPattern.test(password)) {
+        small.style.display = 'block';
+        small.style.color = 'red';
+        passwordInput.style.border = '2px solid red';
+        passwordInput2.style.border = '2px solid red';
+        return;
+    }
 
     if (password !== confirmPassword) {
         showNotification("Les mots de passe ne correspondent pas.", "error");
@@ -38,6 +51,7 @@ function saveRegistrationData(event) {
     }
 
     const userData = {
+        pseudo: pseudo,
         email: email,
         password: password
     };
@@ -54,7 +68,7 @@ function handleLogin(event) {
 
     const storedUserData = localStorage.getItem(email);
     if (!storedUserData) {
-        showNotification("Utilisateur non trouvé.", "error");
+        showNotification("Email ou mot de passe incorrect.", "error");
         return;
     }
 
@@ -66,7 +80,7 @@ function handleLogin(event) {
             window.location.href = 'index.html';
         }, 1000);
     } else {
-        showNotification("Mot de passe incorrect.", "error");
+        showNotification("Email ou mot de passe incorrect.", "error");
     }
 }
 
