@@ -40,6 +40,6 @@ function handleAuthButtonClick() {
         sessionStorage.removeItem('isAuthenticated');
         window.location.reload();
     } else {
-        window.location.href = 'connexion.html';
+        window.location.href = '../../pages/connexion.html';
     }
 }
